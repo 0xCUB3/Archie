@@ -1,4 +1,3 @@
-import asyncio
 import lightbulb
 import hikari
 import miru
