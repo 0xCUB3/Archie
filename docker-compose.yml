@@ -5,3 +5,5 @@ services:
         container_name: Archie
         volumes:
             - /home/server/Archie/Archie-data:/app/data
+        environment:
+            - TOKEN: ${{ secrets.TOKEN }}
