@@ -1,12 +1,9 @@
 import lightbulb
 import hikari
 import miru
-from dotenv import load_dotenv
 import os
 import datetime
 import checker
-
-load_dotenv()
 
 # Instantiate a Bot instance
 bot = lightbulb.BotApp(token=os.getenv("TOKEN") or "", prefix="?", default_enabled_guilds=[986212119693389834])
