@@ -4,6 +4,6 @@ services:
         build: .
         container_name: Archie
         volumes:
-            - /home/server/Archie/Archie-data:/app/data
+            - /home/server/Archie-data:/bot/data
         environment:
             - TOKEN

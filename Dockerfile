@@ -1,8 +1,8 @@
 FROM python:3.11
 
-COPY requirements.txt /app/
+COPY requirements.txt /bot/
 
-WORKDIR /app
+WORKDIR /bot
 RUN pip install -r requirements.txt
 
 COPY . .
