@@ -6,6 +6,7 @@ import datetime
 import checker
 
 # Instantiate a Bot instance
+print("THING: " + os.getenv("TOKEN"))
 bot = lightbulb.BotApp(token=os.getenv("TOKEN") or "", prefix="?", default_enabled_guilds=[986212119693389834])
 miru.install(bot)
 
