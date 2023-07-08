@@ -6,4 +6,4 @@ services:
         volumes:
             - /home/server/Archie-data:/bot/data
         environment:
-            - TOKEN
+            - TOKEN: ${{ secrets.TOKEN }}
