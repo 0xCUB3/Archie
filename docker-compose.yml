@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+    main:
+        build: .
+        container_name: Archie
+        volumes:
+            - /home/server/Archie/Archie-data:/app/data
