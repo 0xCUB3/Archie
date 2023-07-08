@@ -19,6 +19,3 @@ jobs:
 
       - name: Cleanup Unused Images
         run: docker image prune -f
-
-      - name: Display Logs
-        run: python3 -m exendlr Archie "ready"
