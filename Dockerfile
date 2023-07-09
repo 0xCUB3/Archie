@@ -6,4 +6,4 @@ WORKDIR /bot
 RUN pip install -r requirements.txt
 
 COPY . .
-CMD ["python3", "bot/main.py -O"]
+CMD ["python3", "-OO bot/main.py"]
