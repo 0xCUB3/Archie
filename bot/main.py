@@ -45,6 +45,7 @@ async def check_url(ctx: lightbulb.SlashContext) -> None:
 # TODO: Make this asynchronous somehow
 @bot.command
 @lightbulb.option("forum", "The forum to check", required=True, type=hikari.GuildChannel)
+@lightbulb.add_checks(lightbulb.checks.has_guild_permissions(hikari.Permissions.MANAGE_CHANNELS))
 @lightbulb.command("check_invites", "Iterates through all channels in a forum and checks Arc invites")
 @lightbulb.implements(lightbulb.SlashCommand)
 async def check_invites(ctx: lightbulb.SlashContext) -> None:
