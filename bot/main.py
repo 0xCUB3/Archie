@@ -12,6 +12,15 @@ miru.install(bot)
 # Prepare the list of found Arc invites and the final message
 invite_list = []
 
+@bot.listen(lightbulb.CommandErrorEvent)
+async def on_error(event: lightbulb.CommandErrorEvent) -> None:
+    exception = event.exception.__cause__ or event.exception
+    
+    if isinstance(exception, lightbulb.MissingRequiredPermission):
+        await event.context.respond(f"You are missing the following permissions:\n > {exception.missing_perms}")
+    else:
+        raise exception
+
 class DeleteView(miru.View):
     @miru.button(label="Delete Invalid Invites", style=hikari.ButtonStyle.DANGER)
     async def delete_invites(self, button: miru.Button, ctx: miru.ViewContext) -> None:
@@ -19,7 +28,7 @@ class DeleteView(miru.View):
         invalid_invites = []
         for thrd, msg, invite, is_valid in invite_list:
             if not is_valid:
-                invalid_invites.append("<" + invite + ">")
+                invalid_invites.append(f"<{invite}>")
                 await thrd.delete()
         await delete_message.edit(content="__Deleted invalid invites:__ - " + '\n - '.join(invalid_invites))
 
