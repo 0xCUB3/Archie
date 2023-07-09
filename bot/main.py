@@ -6,7 +6,7 @@ import datetime
 import checker
 
 # Instantiate a Bot instance
-bot = lightbulb.BotApp(token=os.getenv("TOKEN") or "", prefix="?", default_enabled_guilds=[986212119693389834])
+bot = lightbulb.BotApp(token=os.getenv("TOKEN") or "", prefix="?", default_enabled_guilds=[986212119693389834, 1016890939245088861])
 miru.install(bot)
 
 # Prepare the list of found Arc invites and the final message
