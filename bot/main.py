@@ -93,6 +93,6 @@ async def check_invites(ctx: lightbulb.SlashContext) -> None:
         await final_message.edit(content=response + "\n\n**WARNING: There are invalid Arc invites in this forum. Should I delete them?**", components=view)
         await view.start(final_message)
 
-print("THING: " + os.getenv("TOKEN"))
+print("THING: " + str(os.getenv("TOKEN")))
 bot.run()
 
