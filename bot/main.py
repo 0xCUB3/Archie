@@ -62,7 +62,7 @@ async def check_invites(ctx: lightbulb.SlashContext) -> None:
                 if "https://arc.net/gift/" in content:
                     # Extract the Arc invite URL
                     start_index = content.find("https://arc.net/gift/")
-                    invite = content[start_index:].split(" ")[0].replace(">", "")
+                    invite = content[start_index:].replace("\n", " ").split(" ")[0].replace(">", "")
 
                     # Check if the invite is valid
                     is_valid = checker.check_is_valid_code(invite)
