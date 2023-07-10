@@ -96,4 +96,3 @@ async def check_invites(ctx: lightbulb.SlashContext) -> None:
 
 print("THING: " + str(os.getenv("TOKEN")))
 bot.run()
-
