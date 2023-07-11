@@ -58,6 +58,8 @@ async def check_url(ctx: lightbulb.SlashContext) -> None:
 @lightbulb.command("check_invites", "Iterates through all channels in a forum and checks Arc invites")
 @lightbulb.implements(lightbulb.SlashCommand)
 async def check_invites(ctx: lightbulb.SlashContext) -> None:
+    invite_list.clear()
+
     # Start the initial response message
     final_message = await ctx.respond(f"Checking <#{ctx.options.forum.id}>...")
 
